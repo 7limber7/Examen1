@@ -1,0 +1,9 @@
+package com.example.demo.controller;
+
+import com.example.demo.service.Detalle_compraService;
+
+public class Detalle_compraController {
+	AutoCloseable
+	Detalle_compraService w;
+
+}

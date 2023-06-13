@@ -1,0 +1,39 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Compras;
+import com.example.demo.repository.ComprasRepository;
+@Service
+public class ComprasServiceImplement implements ComprasService {
+	@Autowired
+	ComprasRepository c;
+
+	@Override
+	public Compras registrar(Compras compras) {
+		// TODO Auto-generated method stub
+		return c.save(compras);
+	}
+
+	@Override
+	public Compras actulizar(Compras compras) {
+		// TODO Auto-generated method stub
+		return c.save(compras);
+	}
+
+	@Override
+	public void eliminar(Compras compras) {
+		// TODO Auto-generated method stub
+		c.delete(compras);
+	}
+
+	@Override
+	public List<Compras> ver() {
+		// TODO Auto-generated method stub
+		return c.findAll();
+	}
+
+}

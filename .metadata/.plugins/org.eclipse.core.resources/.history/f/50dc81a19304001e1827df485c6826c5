@@ -1,0 +1,37 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.demo.entity.Ajustes;
+import com.example.demo.service.Estado_ventasService;
+
+public class Estado_ventasController {
+	@Autowired
+	Estado_ventasService t;
+	
+	@GetMapping
+	public List<Ajustes>ver(){
+		return z.ver();
+	}
+	@PostMapping
+	public Estado_ventas registrar(@RequestBody Estado_ventas estado_ventas) {
+		return t.eliminar(Estado_ventas);
+		
+	}
+	@PutMapping
+	public Ajustes actualizar(@RequestBody Ajustes ajustes) {
+		return z.actulizar(ajustes);
+	}
+	@DeleteMapping
+	public void eliminar(@RequestBody Ajustes ajustes) {
+		z.eliminar(ajustes);
+	}
+
+}

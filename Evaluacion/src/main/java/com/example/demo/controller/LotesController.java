@@ -1,0 +1,40 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Lotes;
+import com.example.demo.service.LotesService;
+@RestController
+@RequestMapping("/mallqui")
+public class LotesController {
+	@Autowired
+	LotesService m;
+	
+	@GetMapping
+	public List<Lotes>ver(){
+		return m.ver();
+	}
+	@PostMapping
+	public Lotes registrar(@RequestBody Lotes lotes) {
+		return m.registrar(lotes);
+		
+	}
+	@PutMapping
+	public Lotes actualizar(@RequestBody Lotes lotes) {
+		return m.actulizar(lotes);
+	}
+	@DeleteMapping
+	public void eliminar(@RequestBody Lotes lotes) {
+		m.eliminar(lotes);
+	}
+
+}

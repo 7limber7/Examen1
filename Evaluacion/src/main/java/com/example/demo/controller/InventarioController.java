@@ -1,0 +1,40 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Inventario;
+import com.example.demo.service.InventarioService;
+@RestController
+@RequestMapping("/yeyson")
+public class InventarioController {
+	@Autowired
+	InventarioService s;
+	
+	@GetMapping
+	public List<Inventario>ver(){
+		return s.ver();
+	}
+	@PostMapping
+	public Inventario registrar(@RequestBody Inventario inventario) {
+		return s.registrar(inventario);
+		
+	}
+	@PutMapping
+	public Inventario actualizar(@RequestBody Inventario inventario) {
+		return s.actulizar(inventario);
+	}
+	@DeleteMapping
+	public void eliminar(@RequestBody Inventario inventario) {
+		s.eliminar(inventario);
+	}
+
+}

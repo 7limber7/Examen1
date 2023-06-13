@@ -1,0 +1,89 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+@Entity(name="Ajustes")
+@Table(name="ajustes")
+public class Ajustes {
+	@Id
+	String ajustes;
+	String producto;
+	String motivo;
+	String cantidad;
+	String fecha;
+	String tipo;
+	String lote;
+	
+		public Ajustes() {}
+
+		public Ajustes(String ajsutes, String prodducto, String motivo, String cantidad, String fecha, String tipo,
+				String lote) {
+			super();
+			this.ajsutes = ajsutes;
+			this.prodducto = prodducto;
+			this.motivo = motivo;
+			this.cantidad = cantidad;
+			this.fecha = fecha;
+			this.tipo = tipo;
+			this.lote = lote;
+		}
+
+		public String getAjsutes() {
+			return ajsutes;
+		}
+
+		public void setAjsutes(String ajsutes) {
+			this.ajsutes = ajsutes;
+		}
+
+		public String getProdducto() {
+			return prodducto;
+		}
+
+		public void setProdducto(String prodducto) {
+			this.prodducto = prodducto;
+		}
+
+		public String getMotivo() {
+			return motivo;
+		}
+
+		public void setMotivo(String motivo) {
+			this.motivo = motivo;
+		}
+
+		public String getCantidad() {
+			return cantidad;
+		}
+
+		public void setCantidad(String cantidad) {
+			this.cantidad = cantidad;
+		}
+
+		public String getFecha() {
+			return fecha;
+		}
+
+		public void setFecha(String fecha) {
+			this.fecha = fecha;
+		}
+
+		public String getTipo() {
+			return tipo;
+		}
+
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
+
+		public String getLote() {
+			return lote;
+		}
+
+		public void setLote(String lote) {
+			this.lote = lote;
+		}
+		
+
+}

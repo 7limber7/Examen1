@@ -1,0 +1,34 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.entity.Ajustes;
+import com.example.demo.service.AjustesService;
+
+public class AjustesController {
+	@Autowired
+	AjustesService z;
+	
+	@GetMapping
+	public List<Ajustes>ver(){
+		return z.ver());
+	}
+	@PostMapping
+	public Producto registrar(@RequestBody Producto producto) {
+		return ñ.registrar(producto);
+		
+	}
+	@PutMapping
+	public Producto actualizar(@RequestBody Producto producto) {
+		return ñ.actulizar(producto);
+	}
+	@DeleteMapping
+	public void eliminar(@RequestBody Producto producto) {
+		ñ.eliminar(producto);
+	}
+	
+
+}

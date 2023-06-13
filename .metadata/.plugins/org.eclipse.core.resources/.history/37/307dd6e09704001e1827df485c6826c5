@@ -1,0 +1,38 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+import com.example.demo.entity.Detalle_compra;
+import com.example.demo.service.Detalle_compraService;
+
+public class Detalle_compraController {
+	@Autowired
+	Detalle_compraService w;
+	
+	@GetMapping
+	public List<Detalle_compra>ver(){
+		return w.ver();
+	}
+	@PostMapping
+	public Detalle_compra registrar(@RequestBody Detalle_compra detalle_compra) {
+		return w.registrar(detalle_compra);
+		
+	}
+	@PutMapping
+	public Detalle_compra actualizar(@RequestBody Detalle_compra detalle_compra) {
+		return w.actulizar(detalle_compra);
+	}
+	@DeleteMapping
+	public void eliminar(@RequestBody Detalle_compra detalle_compra) {
+		w.eliminar(detalle_compra);
+	}
+
+}

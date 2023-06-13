@@ -1,0 +1,39 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.demo.entity.Ajustes;
+import com.example.demo.entity.Devoluciones;
+import com.example.demo.service.DevolucionesService;
+
+public class DevolucionesController {
+	@Autowired
+	DevolucionesService u;
+	
+	@GetMapping
+	public List<Devoluciones>ver(){
+		return u.ver();
+		
+	}
+	@PostMapping
+	public Devoluciones registrar(@RequestBody Devoluciones devoluciones) {
+		return u.registrar(devoluciones);
+		
+	}
+	@PutMapping
+	public Devoluciones actualizar(@RequestBody Devoluciones devoluciones) {
+		return u.actulizar(devoluciones);
+	}
+	@DeleteMapping
+	public void eliminar(@RequestBody Devoluciones Devoluciones) {
+		u.elimina(Devoluciones);
+	}
+
+}

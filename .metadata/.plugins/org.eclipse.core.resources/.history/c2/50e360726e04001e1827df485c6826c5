@@ -1,0 +1,16 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+@Entity(name="Detalle_lote")
+@Table(name="detalle_lote")
+public class Detalle_lote {
+	
+	String fechaIngreso;
+	String cantidad;
+	String precio_compra;
+	String porcentaje_Ganancia;
+	String porcentaje_Descuento;
+	String precio_venta;
+
+}

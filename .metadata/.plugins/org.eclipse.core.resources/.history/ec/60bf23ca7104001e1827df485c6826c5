@@ -1,0 +1,23 @@
+package com.example.demo.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+@Entity(name="Ventas")
+@Table(name="ventas")
+public class Ventas {
+	String ventas;
+	String id_producto;
+	
+	double cantidad ;
+	 double precio;
+	 double descuento;
+	 String total_importe;
+	 String fecha;
+	 String hora;
+	 String id_empleado;
+	 
+	 public Ventas() {}
+
+	
+}
